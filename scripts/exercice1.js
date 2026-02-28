@@ -2,7 +2,7 @@
 
 // des listes pour des tests
 const numbers = [2, 3, 5, 4, 10, 6];
-const persons = [ {name : 'timoleon', age : 12 }, {name : 'bilbo', age : 111 }, {name : 'frodo', age : 33 }, {name : 'sam', age : 26 }];
+const persons = [ {name : 'timoleon', age : 12 }, {name : 'bilbo', age : 111 }, {name : 'sam', age : 26 }, {name : 'frodo', age : 33 }];
 
 /********** EXERCICE 1 ***********************/
 console.log(` *** EXERCICE 1 *** `);
