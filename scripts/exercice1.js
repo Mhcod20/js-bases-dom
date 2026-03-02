@@ -41,18 +41,66 @@ console.log(`example2(numbers, 5) : ${example2(numbers, 5)}`);
 console.log(` *** EXERCICE 2 *** `);
 
 
+console.log(persons.map(elt => elt.name))
+
+console.log(persons.map(elt => elt.name[0].toUpperCase()))
+
+console.log(persons.map((elt,i) => elt.name[i]))
+
+const capitalize = elm1 => elm1.charAt(0).toUpperCase() + elm1.slice(1)
+    
+    /*const capitalize = function(elm) {for(let i = 0 ; i < elm.length ; i ++){
+                                if (i == 0){
+                                    return elm[0].toUpperCase();
+                                }else {
+                                    return elm;
+                                }
+                            }
+                        }
+    */
+
+console.log(persons.map(elt => capitalize(elt.name)))
+
+const myMap = (list,fonction) => {let lst2 = [];
+                                for (let elm2 of list){
+                                    lst2.push(fonction(elm2.name));
+                                }
+                                return lst2;
+                            }
+
+console.log(myMap(persons, capitalize))
+
+
 /*********************************************/
 
 
 /********** EXERCICE 3 ***********************/
 console.log(` *** EXERCICE 3 *** `);
+/*Pendant le travail du TP, pour visualiser le résultat de votre travail, vous devez charger le fichier html/exercice1.html dans Firefox et consulter la trace d'exécution dans la console qui s'active par Ctrl Shift K.*/
 
+const shiftCodePoint = mot => {
+                                let position = mot.codePointAt() - 97;
+                                return position + 9398;
+}
+    
+const shiftCodePointList = mot =>{ (Array.from(mot)).map((elt,i) => shiftCodePoint(mot.charAt(i)));
+                                    /*
+                                   let lst = [];
+                                   for(let i = 0 ; i < mot.length ; i ++){
+                                        lst.push(shiftCodePoint(mot.charAt(i)));
+                                   }
+                                   return lst;
+                                   */
+                                }
+const lname = persons.map(elt => elt.name); 
+console.log(lname.map(elt => (shiftCodePointList(elt).map(letter => String.fromCodePoint(letter))).join()));
 
 /*********************************************/
 
 
 /********** EXERCICE 4 ***********************/
 console.log(` *** EXERCICE 4 *** `);
+
 
 
 /*********************************************/
