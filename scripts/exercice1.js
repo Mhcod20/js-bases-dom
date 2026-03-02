@@ -79,11 +79,11 @@ console.log(` *** EXERCICE 3 *** `);
 /*Pendant le travail du TP, pour visualiser le résultat de votre travail, vous devez charger le fichier html/exercice1.html dans Firefox et consulter la trace d'exécution dans la console qui s'active par Ctrl Shift K.*/
 
 const shiftCodePoint = mot => {
-                                let position = mot.codePointAt() - 97;
+                                let position = mot.codePointAt(0) - 97;
                                 return position + 9398;
 }
     
-const shiftCodePointList = mot =>{ (Array.from(mot)).map((elt,i) => shiftCodePoint(mot.charAt(i)));
+const shiftCodePointList = mot => Array.from(mot).map(elt => shiftCodePoint(elt));
                                     /*
                                    let lst = [];
                                    for(let i = 0 ; i < mot.length ; i ++){
@@ -91,7 +91,6 @@ const shiftCodePointList = mot =>{ (Array.from(mot)).map((elt,i) => shiftCodePoi
                                    }
                                    return lst;
                                    */
-                                }
 const lname = persons.map(elt => elt.name); 
 console.log(lname.map(elt => (shiftCodePointList(elt).map(letter => String.fromCodePoint(letter))).join()));
 
