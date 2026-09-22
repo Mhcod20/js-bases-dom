@@ -1,4 +1,6 @@
-# TP1 — Bases de JavaScript (tableaux, DOM, manipulation de données)
+# js-bases-dom — Bases de JavaScript (tableaux, DOM, manipulation de données)
+
+*(TP1 de l'UE JavaScript)*
 
 Premier TP de l'UE JavaScript : trois exercices indépendants en JavaScript "vanilla" (pas de build, pas de dépendances), à exécuter directement dans le navigateur.
 
