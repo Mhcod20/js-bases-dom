@@ -100,18 +100,36 @@ console.log(lname.map(elt => (shiftCodePointList(elt).map(letter => String.fromC
 /********** EXERCICE 4 ***********************/
 console.log(` *** EXERCICE 4 *** `);
 
+console.log(numbers.map(elt => elt * 10));
 
+const multiples = (n,lst) => lst.map(elt => elt * n);
+
+const multiples5 = lst => multiples(5,lst);
+
+const multiplesFactory = (factor) => {return (lst) => multiples(factor, lst)}
 
 /*********************************************/
 
 /********** EXERCICE 5 ***********************/
 console.log(` *** EXERCICE 5 *** `);
 
+numbers.forEach(elt => console.log(elt));
+
+persons.forEach(elt => {console.log(`${elt.name} a ${elt.age} ans`);});
 
 /*********************************************/
 
 /********** EXERCICE 6 ***********************/
 console.log(` *** EXERCICE 6 *** `);
+
+const t_inf5 = numbers.filter(elt => elt < 5);
+console.log(t_inf5);
+
+const createAcronym = phrase => { const tab_phrase = phrase.split(" ");
+                                  const tab_phrase3 = tab_phrase.filter(elt => elt.length > 3);
+                                  const res = tab_phrase3.map(elt => elt.charAt(0).toUpperCase());
+                                  return res.join("");
+}
 
 
 /*********************************************/
@@ -120,6 +138,23 @@ console.log(` *** EXERCICE 6 *** `);
 /********** EXERCICE 7 ***********************/
 console.log(` *** EXERCICE 7 *** `);
 
+const nbLetters = phrase => { const tab_phrase = phrase.split(" ");
+                              const res =tab_phrase.reduce((res, elt) => res + elt.length, 0);
+                              return res;
+}  
+
+const max = (nb1, nb2) => {if (nb1 < nb2){
+                                return nb2;
+                            }else{
+                                return nb1;
+                            }
+}
+
+const maxNumber = lst => lst.reduce((res, elt) => max(res,elt),0);
+
+const maxNumber2 = lst => Math.max(...lst);
+
+const sum = (...val) => val.reduce((res, elt) => res + elt, 0);
 
 /*********************************************/
 
@@ -135,6 +170,12 @@ const lesReponses = [
                   {nom : 'Frodo', present : 'oui'},
                   {nom : 'Timo Leon', present : 'non'},
                  ];
+
+const participants = (invite, reponse) => { const f = reponse.filter(elt => elt.present == 'oui').map(elt => elt.nom);
+                                            const temp = reponse.map(elt => elt.nom);
+                                            return invite.filter(elt => f.includes(elt) || !temp.includes(elt));
+
+}
 
 /*********************************************/
 
